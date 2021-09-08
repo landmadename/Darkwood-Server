@@ -4,10 +4,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import java.io.File;
+
 @Configuration
 public class ImagesConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/images/**").addResourceLocations("file:C:\\CODE\\web\\DWserver\\images\\");
+        String currentPath = new File(".").getAbsolutePath();
+        registry
+                .addResourceHandler("/images/**")
+                .addResourceLocations("file:images/");
     }
 }
