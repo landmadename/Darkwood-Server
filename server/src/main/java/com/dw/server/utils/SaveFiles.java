@@ -8,7 +8,8 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 
 public class SaveFiles {
-    public static String imagePath = "C:\\CODE\\web\\DWserver\\images\\";
+//    String currentPath =
+//    public static String imagePath = currentPath + "\\images\\";
 
     public static String saveFiles(MultipartFile[] files){
         String md5 = "";
@@ -27,10 +28,11 @@ public class SaveFiles {
     public static String saveFile(MultipartFile file) {
         try {
             String md5 = getMd5(file);
-            file.transferTo(new File(imagePath + md5 + ".png"));
+            String currentPath = new File("./images/").getAbsolutePath() + "\\";
+            file.transferTo(new File(currentPath + md5 + ".png"));
             return md5 + ".png";
         }catch (IOException ioException){
-            System.out.println("保存文件出错！！！");
+            System.out.println(ioException);
             return null;
         }
     }

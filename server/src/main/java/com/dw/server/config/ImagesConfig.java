@@ -10,7 +10,6 @@ import java.io.File;
 public class ImagesConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        String currentPath = new File(".").getAbsolutePath();
         registry
                 .addResourceHandler("/images/**")
                 .addResourceLocations("file:images/");
