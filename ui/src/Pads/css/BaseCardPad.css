@@ -1,0 +1,59 @@
+.CardPadContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
+.CardPadInnerContainer {
+  box-shadow: -3px -3px 3px rgba(255, 255, 255, 0.5), 3px 3px 3px rgba(189, 195, 197, 0.4);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 270px;
+  height: 270px;
+  background-color: #EDF1F4;
+  cursor: auto; }
+
+.CardPadNameBox {
+  width: 180px;
+  height: 45px;
+  padding: 5px;
+  background-color: #F3F3F4;
+  box-shadow: inset -2px -1px 4px #FFFFFF, inset 2px 1px 4px rgba(189, 195, 197, 0.48);
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
+.CardPadNameBox > input {
+  width: 100%;
+  background-color: #F3F3F4;
+  padding-left: 5px;
+  font-weight: normal;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  color: #ababab;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  box-sizing: border-box;
+  outline: none;
+  border: none; }
+
+.CardPadImageBox {
+  width: 180px;
+  height: 130px;
+  margin-top: 5px;
+  padding: 5px;
+  background-color: #F3F3F4;
+  box-shadow: inset -2px -1px 4px #FFFFFF, inset 2px 1px 4px rgba(189, 195, 197, 0.48);
+  border-radius: 10px;
+  box-sizing: border-box; }
+
+/*# sourceMappingURL=BaseCardPad.css.map */

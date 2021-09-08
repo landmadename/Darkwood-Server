@@ -1,0 +1,93 @@
+@import "src/css/colors";
+@import "src/css/base.scss";
+
+.frameImagesChooserContainer{
+  width: 100%;
+  height: 181px;
+  @include sinkBox;
+  box-sizing: border-box;
+  border-radius: 7px;
+  @include text;
+  @include stayCenter;
+  overflow: hidden;
+}
+
+.thumbs{
+  @include full;
+  display: grid;
+  grid-template-columns: 86px 86px 86px;
+  grid-template-rows: 86px 86px;
+}
+
+.thumbs > p{
+  position: absolute;
+  transform: translate(33px, 58px);
+}
+
+.thumb{
+  width: 86px;
+  height: 86px;
+  border-radius: 2px;
+  border: 1px;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.thumbImage{
+  @include full;
+  @include button;
+  padding: 0px;
+  border-radius: 4px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center ;
+}
+
+.thumbCover{
+  @include full;
+  @include stayCenter;
+  background: #d4dadd;
+  transform: translateY(-78px);
+  border-radius: 4px;
+}
+
+.thumbAddMore{
+  @include stayCenter;
+  @include button;
+  background: #EDF1F4;
+  margin: 4px;
+  padding: 0px !important;
+  width: 78px;
+  height: 78px;
+  border-radius: 4px;
+}
+
+.accountImageChooser{
+  box-sizing: border-box;
+  border-radius: 7px;
+  height: 90px;
+  width: 100%;
+  @include stayCenter;
+  @include text;
+  @include sinkBox;
+}
+
+.fullImageChooserContainer{
+  border: 6px dashed #DCDCDC;
+  box-sizing: border-box;
+  border-radius: 7px;
+  @include full;
+  @include stayCenter;
+  @include text;
+  font-size: 23px;
+}
+
+.smallImageChooserContainer{
+  box-sizing: border-box;
+  border-radius: 7px;
+  width: 100%;
+  height: 90px;
+  @include stayCenter;
+  @include text;
+  @include sinkBox;
+}

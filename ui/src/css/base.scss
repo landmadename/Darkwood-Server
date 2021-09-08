@@ -1,0 +1,46 @@
+@import "colors";
+@mixin raisedBox{
+  padding: 5px;
+  background-color: $base-color;
+  box-shadow: -5px -5px 15px 1px #FFFFFF, 5px 5px 15px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+}
+@mixin sinkBox{
+  padding: 5px;
+  background-color: $fore-color;
+  box-shadow: inset -2px -1px 4px #FFFFFF, inset 2px 1px 4px rgba(189, 195, 197, 0.48);
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+@mixin button{
+  box-shadow: -3px -3px 3px rgba(255, 255, 255, 0.5), 3px 3px 3px rgba(189, 195, 197, 0.4);
+  border-radius: 6px;
+  cursor: pointer;
+}
+@mixin stayCenter{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+@mixin full{
+  width: 100%;
+  height: 100%;
+}
+@mixin text{
+  font-weight: normal;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  color: $text-color;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+@mixin flexRowSpaceBetween{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@mixin flexColumnSpaceBetween{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

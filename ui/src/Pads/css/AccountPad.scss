@@ -1,0 +1,38 @@
+@import "../../css/colors";
+@import "../../css/base.scss";
+
+.accountContainer{
+  @include full;
+  @include sinkBox;
+  @include flexRowSpaceBetween;
+}
+
+.accountLeftContainer{
+  width: 280px;
+  height: 100%;
+  @include sinkBox;
+  @include flexColumnSpaceBetween;
+}
+.accountRightContainer{
+  width: 280px;
+  height: 100%;
+  @include sinkBox;
+  @include flexColumnSpaceBetween;
+}
+
+.accountInputBox{
+  height: 48px;
+}
+
+.accountInputBox>*{
+  width: 100%;
+}
+
+.accountTextArea{
+  height: 160px;
+}
+
+.accountTextArea>*{
+  @include full;
+  border-radius: 5px;
+}

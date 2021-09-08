@@ -1,0 +1,69 @@
+.browserGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 230px);
+  grid-template-rows: repeat(5, 55px);
+  grid-row-gap: 20px;
+  grid-column-gap: 40px;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 100%; }
+
+.browserItemBox {
+  width: 100%;
+  height: 100%;
+  box-shadow: -3px -3px 3px rgba(255, 255, 255, 0.5), 3px 3px 3px rgba(189, 195, 197, 0.4);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  box-sizing: border-box; }
+
+.browserItemText {
+  font-weight: normal;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  color: #ababab;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  mask-image: linear-gradient(to left, transparent 1%, black 20%);
+  text-align: center;
+  pointer-events: none; }
+
+.browserItemImg {
+  width: 45px;
+  height: 45px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; }
+
+.browserItemImg > img {
+  width: 100%;
+  border-radius: 5px; }
+
+.browserItemDeleteButton {
+  box-shadow: -3px -3px 3px rgba(255, 255, 255, 0.5), 3px 3px 3px rgba(189, 195, 197, 0.4);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 13px; }
+
+.browserItemDeleteButton > * {
+  pointer-events: none; }
+
+/*# sourceMappingURL=BrowserPad.css.map */

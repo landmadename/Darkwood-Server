@@ -1,0 +1,36 @@
+@import "colors";
+@import "base";
+
+.root{
+  width: 100vw;
+  height: 100vh;
+  background-color: $base-color;
+  display: flex;
+  flex-direction: row;
+}
+
+.navigationArea{
+  width: 220px;
+  height: 100vh;
+  @include stayCenter;
+}
+
+.operateArea{
+  width: 650px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inputArea{
+  width: 100%;
+  height: 23%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.padArea{
+  width: 100%;
+  height: 75%;
+  margin-top: 10px;
+}

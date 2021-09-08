@@ -1,0 +1,41 @@
+@import "../../css/colors";
+@import "../../css/base.scss";
+
+.CardPadContainer{
+  @include full;
+  @include stayCenter;
+}
+
+.CardPadInnerContainer{
+  @include button;
+  @include stayCenter;
+  flex-direction: column;
+  width: 270px;
+  height: 270px;
+  background-color: $base-color;
+  cursor: auto;
+}
+
+.CardPadNameBox{
+  width: 180px;
+  height: 45px;
+  @include sinkBox;
+  @include stayCenter;
+}
+
+.CardPadNameBox > input{
+  width: 100%;
+  background-color: $fore-color;
+  padding-left: 5px;
+  @include text;
+  box-sizing: border-box;
+  outline:none;
+  border:none;
+}
+
+.CardPadImageBox{
+  width: 180px;
+  height: 130px;
+  margin-top: 5px;
+  @include sinkBox;
+}

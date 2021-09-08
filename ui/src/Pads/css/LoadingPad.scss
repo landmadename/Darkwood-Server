@@ -1,0 +1,12 @@
+@import "../../css/colors";
+@import "../../css/base.scss";
+
+.LoadingBox{
+  @include full;
+  @include stayCenter;
+}
+
+.LoadingBox > *{
+  @include text;
+  font-size: 25px;
+}

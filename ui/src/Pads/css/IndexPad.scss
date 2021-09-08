@@ -1,0 +1,64 @@
+@import "../../css/colors";
+@import "../../css/base.scss";
+
+.padContainer{
+  width: 100%;
+  height: 400px;
+  @include raisedBox;
+}
+
+.fastViewContainer{
+  height: 70px;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+  @include flexRowSpaceBetween;
+}
+
+.tile{
+  height: 100%;
+  width: 31%;
+  @include button;
+  @include flexRowSpaceBetween;
+  padding: 7px;
+  box-sizing: border-box;
+  padding-left: 13px;
+  padding-right: 13px;
+}
+
+.chartBox{
+  width: 100%;
+  height: 325px;
+  @include sinkBox;
+  @include stayCenter;
+}
+
+.tile > div:nth-child(1){
+  width: 45%;
+  height: 100%;
+  box-sizing: border-box;
+  @include stayCenter;
+  @include button;
+  border-radius: 100px;
+}
+
+.tile > div:nth-child(2){
+  @include flexColumnSpaceBetween;
+  height: 100%;
+  width: 50%;
+}
+
+.tile > div:nth-child(2) > span{
+  text-align: right;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  color: #ABABAB;
+}
+
+.tile > div:nth-child(2) > span:nth-child(2){
+  font-size: 30px;
+  line-height: 30px;
+}

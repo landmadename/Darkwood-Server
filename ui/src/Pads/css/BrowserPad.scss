@@ -1,0 +1,59 @@
+@import "../../css/colors";
+@import "../../css/base.scss";
+
+.browserGrid{
+  display: grid;
+  grid-template-columns: repeat(2, 230px);
+  grid-template-rows: repeat(5, 55px);
+  grid-row-gap: 20px;
+  grid-column-gap: 40px;
+  justify-content: center;
+  align-content: center;
+  @include full;
+}
+
+.browserItemBox{
+  @include full;
+  @include button;
+  @include flexRowSpaceBetween;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.browserItemText{
+  @include text;
+  font-size: 15px;
+  width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  mask-image: linear-gradient(to left, transparent 1%, black 20%);
+  text-align: center;
+  pointer-events: none;
+}
+
+.browserItemImg{
+  width: 45px;
+  height: 45px;
+  border-radius: 5px;
+  @include stayCenter;
+  pointer-events: none;
+}
+
+.browserItemImg > img{
+  width: 100%;
+  border-radius: 5px;
+}
+
+.browserItemDeleteButton{
+  @include button;
+  @include stayCenter;
+  width: 25px;
+  height: 25px;
+  border-radius: 13px;
+}
+
+.browserItemDeleteButton > *{
+  pointer-events: none;
+}

@@ -1,0 +1,31 @@
+$xSize: 50px;
+.magnifier {
+  position: absolute;
+  margin: auto;
+  display: block;
+}
+.magnifier-image {
+  cursor: auto;
+}
+.magnifying-glass:before{
+  content: "⚀";
+  color: aliceblue;
+  width: $xSize;
+  height: $xSize;
+  font-size: $xSize;
+  line-height: 45px;
+  text-align: center;
+  display: block;
+  transform: translate(75px - $xSize * 0.5, 75px - $xSize * 0.5) rotate(45deg);
+}
+.point{
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  background-color: #A5D8A7;
+}
+.markPlace{
+  height: 100%;
+  margin: auto;
+}

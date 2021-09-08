@@ -1,0 +1,23 @@
+@import "src/css/colors";
+@import "src/css/base.scss";
+
+$buttonSize: 60px;
+
+.pageBox{
+  width: $buttonSize;
+  height: $buttonSize;
+  @include stayCenter;
+  @include sinkBox;
+  border-radius: 18px;
+  @include flexColumnSpaceBetween;
+  @include text;
+  font-size: 22px;
+  line-height: 22px;
+}
+
+.pageBoxDivideLine{
+  width: 100%;
+  height: 2px;
+  background-color: #ababab;
+  margin-bottom: 2px;
+}

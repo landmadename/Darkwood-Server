@@ -1,0 +1,63 @@
+.inputOuterBox {
+  width: 250px;
+  height: 40px;
+  padding: 5px;
+  background-color: #EDF1F4;
+  box-shadow: -5px -5px 15px 1px #FFFFFF, 5px 5px 15px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  margin-bottom: 30px; }
+
+.inputInnerBox {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  background-color: #F3F3F4;
+  box-shadow: inset -2px -1px 4px #FFFFFF, inset 2px 1px 4px rgba(189, 195, 197, 0.48);
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-direction: row; }
+
+.lineInput {
+  background-color: #F3F3F4;
+  padding-left: 5px;
+  font-weight: normal;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  color: #ababab;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  box-sizing: border-box;
+  outline: none;
+  border: none; }
+
+.lineInput:focus {
+  border: none; }
+
+.lineInput::placeholder {
+  font-weight: normal;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  color: #ababab;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; }
+
+.searchBox {
+  display: flex;
+  justify-content: space-around; }
+
+.inputIcon {
+  width: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
+.searchButton {
+  width: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer; }
+
+/*# sourceMappingURL=NameInput.css.map */

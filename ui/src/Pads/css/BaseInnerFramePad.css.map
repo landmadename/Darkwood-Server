@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGA,sBAAsB;ECuBpB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EAPZ,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM",
+"sources": ["BaseInnerFramePad.scss","../../css/base.scss"],
+"names": [],
+"file": "BaseInnerFramePad.css"
+}

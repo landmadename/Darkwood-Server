@@ -1,0 +1,79 @@
+@import "../../css/colors";
+@import "../../css/base.scss";
+
+.frameContainer{
+  @include full;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.displayFrameContainer{
+  width: 70%;
+  height: 160px;
+  @include sinkBox;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.imgContainer{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.frameButtonsContainer{
+  height: 230px;
+  box-sizing: border-box;
+  padding: 10px;
+  padding-bottom: 5px;
+
+  display: grid;
+  grid-template-columns: 270px 242px;
+  place-items: center;
+}
+
+.frameImgContainer{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.frameImgContainer > img{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.renderedFrameButton{
+  @include button;
+  padding: 8px;
+  width: 242px;
+  height: 60px;
+  box-sizing: border-box;
+  display: inline;
+  background-color: $base-color;
+}
+
+.bottomButtonsLine{
+  width: 500px;
+  @include flexRowSpaceBetween;
+}
+
+.renderImage{
+  height: 100%;
+  pointer-events: none;
+  border-radius: 4px;
+}
+
+.promptBox{
+  position: absolute;
+  font-size: 35px;
+  color: #d6d6d6;
+  width: 0px;
+  word-wrap: break-word;
+  transform: translate(-265px, -120px);
+  font-weight: 100;
+}

@@ -1,0 +1,43 @@
+@import "../../css/colors";
+@import "../../css/base.scss";
+
+.inputOuterBox{
+  width: 250px;
+  height: 40px;
+  @include raisedBox;
+  margin-bottom: 30px;
+}
+.inputInnerBox{
+  @include full;
+  @include sinkBox;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.lineInput{
+  background-color: $fore-color;
+  padding-left: 5px;
+  @include text;
+  box-sizing: border-box;
+  outline:none;
+  border:none;
+}
+.lineInput:focus{
+  border: none;
+}
+.lineInput::placeholder{
+  @include text;
+}
+.searchBox{
+  display: flex;
+  justify-content: space-around;
+}
+.inputIcon{
+  width: 40px;
+  @include stayCenter;
+}
+.searchButton{
+  width: 40px;
+  @include stayCenter;
+  cursor: pointer;
+}

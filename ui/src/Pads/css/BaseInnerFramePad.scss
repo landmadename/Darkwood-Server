@@ -1,0 +1,7 @@
+@import "../../css/colors";
+@import "../../css/base.scss";
+
+.innerFramePadOuterBox{
+  @include full;
+  @include stayCenter;
+}

@@ -1,0 +1,51 @@
+.accountContainer {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  background-color: #F3F3F4;
+  box-shadow: inset -2px -1px 4px #FFFFFF, inset 2px 1px 4px rgba(189, 195, 197, 0.48);
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.accountLeftContainer {
+  width: 280px;
+  height: 100%;
+  padding: 5px;
+  background-color: #F3F3F4;
+  box-shadow: inset -2px -1px 4px #FFFFFF, inset 2px 1px 4px rgba(189, 195, 197, 0.48);
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+.accountRightContainer {
+  width: 280px;
+  height: 100%;
+  padding: 5px;
+  background-color: #F3F3F4;
+  box-shadow: inset -2px -1px 4px #FFFFFF, inset 2px 1px 4px rgba(189, 195, 197, 0.48);
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+.accountInputBox {
+  height: 48px; }
+
+.accountInputBox > * {
+  width: 100%; }
+
+.accountTextArea {
+  height: 160px; }
+
+.accountTextArea > * {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px; }
+
+/*# sourceMappingURL=AccountPad.css.map */
