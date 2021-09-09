@@ -28,9 +28,8 @@ public class SaveFiles {
     public static String saveFile(MultipartFile file) {
         try {
             String md5 = getMd5(file);
-            String currentPath = new File(".").getAbsolutePath() + "\\";
-            System.out.println(currentPath + md5 + ".png");
-            file.transferTo(new File(currentPath + md5 + ".png"));
+            String filePath = new File("./images/"+ md5 + ".png").getAbsolutePath();
+            file.transferTo(new File(filePath));
             return md5 + ".png";
         }catch (IOException ioException){
             System.out.println(ioException);
