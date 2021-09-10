@@ -77,9 +77,7 @@ export async function getUserInfo () {
             .get(prefix + '/get_user_info'),
         "获取用户信息"
     )
-        .then((res)=>{
-            handleRedirect(res, (res) => data = res.body)
-        })
+        .then((res) => data = res.body)
         .catch(handleError)
     return data
 }
@@ -124,9 +122,7 @@ export async function getA (type, id) {
             .query({id: id}),
         "获取信息"
     )
-        .then((res)=>{
-            handleRedirect(res, (res) => data = res.body)
-        })
+        .then((res) => data = res.body)
         .catch(handleError)
     return data
 }
@@ -139,13 +135,11 @@ export async function loadPicture(picName){
     await superagent
         .get(prefix + '/images/'+picName)
         .responseType('blob')
-        .then((res)=>{
-            handleRedirect(res, (res) => {
-                pic = res.body
-                pic["preview"] = URL.createObjectURL(pic)
-                pic["name"] = picName
-                pic["init"] = true
-            })
+        .then((res) => {
+            pic = res.body
+            pic["preview"] = URL.createObjectURL(pic)
+            pic["name"] = picName
+            pic["init"] = true
         })
         .catch(handleError)
     return pic
