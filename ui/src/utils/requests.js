@@ -8,6 +8,14 @@ if (process.env.NODE_ENV === "development"){
     prefix = "/api"
 }
 
+function handleRedirect(res, callback) {
+    if (res.text.startsWith("<!doctype html>")){
+        window.location.pathname = "/"
+    }else {
+        callback(res)
+    }
+}
+
 function withToast(request, words) {
     return toast.promise(
         request,
@@ -45,7 +53,10 @@ export function updateBrowser(that, page, type){
     superagent
         .get(prefix + '/browser')
         .query({type: type, page: page})
-        .then((res)=>that.setState(res.body))
+        .redirects(0)
+        .then((res)=>{
+            handleRedirect(res, (res)=>that.setState(res.body))
+        })
         .catch(handleError)
 }
 
@@ -53,8 +64,24 @@ export function updateSearch(that, page, type, wd) {
     superagent
         .get(prefix + '/search')
         .query({wd: wd, type: type, page: page})
-        .then((res)=>that.setState(res.body))
+        .then((res)=>{
+            handleRedirect(res, (res)=>that.setState(res.body))
+        })
         .catch(handleError)
+}
+
+export async function getUserInfo () {
+    let data;
+    await withToast(
+        superagent
+            .get(prefix + '/get_user_info'),
+        "获取用户信息"
+    )
+        .then((res)=>{
+            handleRedirect(res, (res) => data = res.body)
+        })
+        .catch(handleError)
+    return data
 }
 
 export function deleteA (type, id, success) {
@@ -64,7 +91,9 @@ export function deleteA (type, id, success) {
             .query({id: id}),
         "删除"
     )
-        .then(success)
+        .then((res)=>{
+            handleRedirect(res, success)
+        })
         .catch(console.log)
 }
 
@@ -95,7 +124,9 @@ export async function getA (type, id) {
             .query({id: id}),
         "获取信息"
     )
-        .then((res) => data = res.body)
+        .then((res)=>{
+            handleRedirect(res, (res) => data = res.body)
+        })
         .catch(handleError)
     return data
 }
@@ -108,11 +139,13 @@ export async function loadPicture(picName){
     await superagent
         .get(prefix + '/images/'+picName)
         .responseType('blob')
-        .then((data) => {
-            pic = data.body
-            pic["preview"] = URL.createObjectURL(pic)
-            pic["name"] = picName
-            pic["init"] = true
+        .then((res)=>{
+            handleRedirect(res, (res) => {
+                pic = res.body
+                pic["preview"] = URL.createObjectURL(pic)
+                pic["name"] = picName
+                pic["init"] = true
+            })
         })
         .catch(handleError)
     return pic
@@ -137,7 +170,9 @@ export function warpPerspective(that, points, chosenImg, success) {
             .send({points: points, chosenImg: chosenImg}),
         "分割图片"
     )
-        .then(success)
+        .then((res)=>{
+            handleRedirect(res, success)
+        })
         .catch(console.log)
 }
 
@@ -163,7 +198,9 @@ export function createFrame(name, contentImages, historyImages, reduce, success)
             .send(formData),
         "新建框条"
     )
-        .then(success)
+        .then((res)=>{
+            handleRedirect(res, success)
+        })
         .catch(console.log)
 }
 
@@ -186,7 +223,9 @@ export function updateFrame(id, name, contentImages, historyImages, reduce, succ
             .send(formData),
         "更新框条"
     )
-        .then(success)
+        .then((res)=>{
+            handleRedirect(res, success)
+        })
         .catch(handleError)
 }
 
@@ -201,7 +240,9 @@ export function createCard(name, prevImg, img, success) {
             .send(formData),
         "新建卡纸"
     )
-        .then(success)
+        .then((res)=>{
+            handleRedirect(res, success)
+        })
         .catch(handleError)
 }
 
@@ -217,7 +258,9 @@ export function updateCard(id, name, prevImg, img, success) {
             .send(formData),
         "更新卡纸"
     )
-        .then(success)
+        .then((res)=>{
+            handleRedirect(res, success)
+        })
         .catch(handleError)
 }
 
@@ -232,7 +275,9 @@ export function createScene(name, prevImg, img, success) {
             .send(formData),
         "新建场景"
     )
-        .then(success)
+        .then((res)=>{
+            handleRedirect(res, success)
+        })
         .catch(handleError)
 }
 
@@ -248,7 +293,9 @@ export function updateScene(id, name, prevImg, img, success) {
             .send(formData),
         "更新场景"
     )
-        .then(success)
+        .then((res)=>{
+            handleRedirect(res, success)
+        })
         .catch(handleError)
 }
 
@@ -263,7 +310,9 @@ export function createInnerFrame(name, prevImg, color, success) {
             .send(formData),
         "创建内框"
     )
-        .then(success)
+        .then((res)=>{
+            handleRedirect(res, success)
+        })
         .catch(handleError)
 }
 
@@ -279,7 +328,9 @@ export function updateInnerFrame(id, name, prevImg, color, success) {
             .send(formData),
         "更新内框"
     )
-        .then(success)
+        .then((res)=>{
+            handleRedirect(res, success)
+        })
         .catch(handleError)
 }
 
@@ -302,16 +353,4 @@ export function updateUserInfo(shopName, shopAddress, phoneNumber, openingHours,
         "更新用户信息"
     )
         .catch(handleError)
-}
-
-export async function getUserInfo () {
-    let data;
-    await withToast(
-        superagent
-            .get(prefix + '/get_user_info'),
-        "获取用户信息"
-    )
-        .then((res) => data = res.body)
-        .catch(handleError)
-    return data
 }

@@ -4,7 +4,7 @@ import "../css/BaseCardPad.scss"
 import {withRouter} from "react-router-dom";
 import {ImageChooser} from "../../components/ImageChooser";
 import {createScene, deleteA, getA, loadPicture, updateScene} from "../../utils/requests";
-import {createCardPrev} from "../../utils/imgTools";
+import {createCardPrev, createScenePrev} from "../../utils/imgTools";
 
 class ScenePad extends Component {
     constructor(props) {
@@ -66,7 +66,7 @@ class ScenePad extends Component {
                         className="fullImageChooserContainer"
                         placeHolder={"拖拽或点击以导入场景图片"}
                         pushImg={(img)=>this.setState({img: img})}
-                        processor={createCardPrev}
+                        processor={createScenePrev}
                         pushProcessedImg={(img)=>this.setState({prevImg: img})}/>
                 }
                 buttons={

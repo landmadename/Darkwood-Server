@@ -78,6 +78,20 @@ export async function createCardPrev(src, pushPrevImg){
     pushPrevImg(dataURLToBlob(pattern_cvs.toDataURL('image/png')))
 }
 
+export async function createScenePrev(src, pushPrevImg){
+    let img = new Image()
+    img.src = src
+    await img.decode()
+
+    let pattern_cvs = document.createElement("canvas")
+    let pattern_ctx = pattern_cvs.getContext('2d')
+    pattern_cvs.width = 64
+    pattern_cvs.height = 64
+
+    pattern_ctx.drawImage(img, 0, 0, 64, 64)
+    pushPrevImg(dataURLToBlob(pattern_cvs.toDataURL('image/png')))
+}
+
 export async function createInnerFramePrev(color, pushPrevImg){
     let pattern_cvs = document.createElement("canvas")
     let pattern_ctx = pattern_cvs.getContext('2d')
