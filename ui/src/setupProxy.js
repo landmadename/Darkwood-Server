@@ -1,9 +1,9 @@
-const { createProxyMiddleware } = require('http-proxy-middleware');  //注意写法，这是1.0以后的版本，最好按抄
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 module.exports = function (app) {
     app.use(createProxyMiddleware('/api',
         {
-            target: 'http://192.168.1.217:8080/',
+            target: 'http://localhost:6002/',
             pathRewrite: {
                 '^/api': '',
             },

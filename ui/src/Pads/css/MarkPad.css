@@ -1,11 +1,11 @@
 @charset "UTF-8";
 .magnifier {
-  position: absolute;
+  position: absolute !important;
   margin: auto;
   display: block; }
 
 .magnifier-image {
-  cursor: auto; }
+  cursor: crosshair !important; }
 
 .magnifying-glass:before {
   content: "⚀";
